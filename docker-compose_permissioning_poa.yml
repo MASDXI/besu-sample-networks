@@ -22,6 +22,7 @@ services:
       "--permissions-accounts-contract-address=0x0000000000000000000000000000000000008888",
       "--permissions-nodes-contract-enabled=${PERMISSIONING_ENABLED}",
       "--permissions-nodes-contract-address=0x0000000000000000000000000000000000009999",
+      "--min-gas-price=0"
     ]
     volumes:
       - public-keys:${BESU_PUBLIC_KEY_DIRECTORY}

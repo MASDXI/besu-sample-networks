@@ -16,7 +16,8 @@ services:
       "--genesis-file=/config/genesis.json",
       "--node-private-key-file=/opt/besu/keys/key",
       "--rpc-http-api=WEB3,ETH,NET,EEA,ADMIN,${SAMPLE_POA_API-ibft}",
-      "--rpc-ws-api=WEB3,ETH,NET,EEA,ADMIN,${SAMPLE_POA_API-ibft}"]
+      "--rpc-ws-api=WEB3,ETH,NET,EEA,ADMIN,${SAMPLE_POA_API-ibft}",
+      "--min-gas-price=0"]
     volumes:
       - public-keys:${BESU_PUBLIC_KEY_DIRECTORY}
       - ./config/besu/config.toml:/config/config.toml
