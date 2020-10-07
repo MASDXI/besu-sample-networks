@@ -93,12 +93,12 @@ Each section also includes use case personas (intended as guidelines only).
 
 ### iii. Smart Contracts & DApp (with MetaMask) <a name="smart-contract-dapp"></a>
 
-- ติดตั้ง [metamask](https://metamask.io/) as an extension in your browser
-- Once you have setup your own private account, select 'My Accounts' by clicking on the avatar pic and then 'Import Account' and enter the following private_key: `0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3`
+- ติดตั้ง [metamask](https://metamask.io/) เป็นส่วนเสริมสำหรับเบราว์เซอร์
+- ถ้าคุณมีการสร้างบัญชีมากก่อนหน้านี้แล้ว, เลือก 'My Accounts' โดยการคลิกรูป Avatar จากนั้น 'Import Account' และทำการนำเข้า private keys ดังนี้: `0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3`
 - Run `./run-dapp.sh` and when that completes open a new tab in your browser and go to `http://localhost:3001` which opens the Truffle pet-shop box app and you can adopt a pet from there.
 NOTE: Once you have adopted a pet, you can also go to the block explorer and search for the transaction where you can see its details recorded. Metamask will also have a record of any transactions.
 
-This is a [video tutorial](https://www.youtube.com/watch?v=_3E9FRJldj8) of the DApp example
+[วิดีโอ ตัวอย่างสอน](https://www.youtube.com/watch?v=_3E9FRJldj8) ตัวอย่าง DApp หรือ แอพพลิเคชั่นแบบกระจายศูนย์กลาง
 
 Behind the scenes, this has used a smart contract that is compiled and then deployed (via a migration) to our test network. The source code for the smart contract and the DApp can be found in the folder `pet-shop`
 
@@ -135,7 +135,7 @@ Behind the scenes, this has used a smart contract that is compiled and then depl
  - you are looking to create a private Ethereum network with private transactions between two or more parties. The logs make it easy to see whats going on between nodes and transactions
 
 
-[วิดีโอ ตัวอย่างสอน](https://www.youtube.com/watch?v=Menekt6-TEQ) ตัวอย่างโหมด privacy นั้นทำอะไรบ้าง
+[วิดีโอ ตัวอย่างสอน](https://www.youtube.com/watch?v=Menekt6-TEQ) ตัวอย่างการใช้งาน feature privacy นั้นทำอะไรบ้าง
 
 รายละเอียดของ node ดังนี้:
 
@@ -180,7 +180,7 @@ Use this scenario:
  - if you are a DevOps engineer or administrator looking to see how the full blockchain works with on chain permissioning and restrictions
  - if you are looking to start a consortium network with permissioning so you can restrict members that join the network
 
-This is a [video tutorial](https://www.youtube.com/watch?v=MhOJKOoEZQQ) of what the permissioning example does
+[วิดีโอ ตัวอย่างสอน](https://www.youtube.com/watch?v=MhOJKOoEZQQ) ตัวอย่างการใช้งาน feature permissioning นั้นทำอะไรบ้าง
  
 คุณจำเป็นต้องติดตั้งครื่องมือเหล่านี้ก่อน
  - [Nodejs](https://nodejs.org/en/download/)
