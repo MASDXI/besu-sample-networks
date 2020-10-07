@@ -1,7 +1,7 @@
 # ตัวอย่างการสร้างเครือข่าย Hyperledger Besu 
 
 ## สารบัญ
-1. [Prerequisites](#prerequisites)
+1. [ข้อกำหนดเบื้องต้น](#ข้อกำหนดเบื้องต้น)
 2. [ตัวอย่างการตั้งค่าเพื่อสร้างเครือข่าย](#ตัวอย่างการตั้งค่าเพื่อสร้างเครือข่าย)
     1. [POW (ethash) Network](#pow-network)
     2. [POA (IBFT2) Network](#poa-network)
@@ -11,11 +11,12 @@
     6. [POA (IBFT2) Network with On Chain Permissioning](#poa-network-permissioning)
     7. [POA (IBFT2) Network with Ethsigner](#poa-network-ethsigner)
 
-## Prerequisites
+## ข้อกำหนดเบื้องต้น
+
 
 ในการเรียกใช้ตัวอย่างเครือข่าย คุณจำเป็นต้องติดตั้งสิ่งต่อไปนี้:
 
-- [Docker and Docker-compose](https://docs.docker.com/compose/install/)
+- [Docker และ Docker-compose](https://docs.docker.com/compose/install/)
 
 | ⚠️ **Note**: ถ้าบน MacOS หรือ Windows, โปรดมั่นใจว่าคุณนั้นได้อนุญาติให้ docker สามารถเรียกใช้แรมได้ถึง 4G หรือ 6G ถ้าใช้งานในโหมด Privacy ตัวอย่าง under the _Resources_ section. The [Docker สำหรับ Mac](https://docs.docker.com/docker-for-mac/) และ [Docker สำหรับ Window](https://docs.docker.com/docker-for-windows/) ไซด์ดังกล่าวมีรายละเอียดเกี่ยวกับวิธีปรับตั้งค่าโดยอยู่ในหมวด  "Resources"     |
 | ---                                                                                                                                                                                                                                                                                                                                                                                |
@@ -36,7 +37,7 @@ All our documentation can be found on the [Besu documentation site](https://besu
 จำเป็นต้องมี Ethereun nodes จำนวน 4 node และ เครื่องมือสำหรับการติดตามสถานะของระบบเครือข่ายเช่น:
 - [Alethio Lite Explorer](https://besu.hyperledger.org/en/latest/HowTo/Deploy/Lite-Block-Explorer/) สำหรับ การค้นหข้อมูลต่างๆที่อยู่ในเครือข่าย และ การค้นหาบัญชี
 - [Metrics monitoring](https://besu.hyperledger.org/en/stable/HowTo/Monitor/Metrics/) ด้วย prometheus และ grafana ให้ insights into how the chain is progressing
-- เพิ่มเติม [logs monitoring](https://besu.hyperledger.org/en/latest/HowTo/Monitor/Elastic-Stack/) ให้ real time logs ของ nodes ในเครือข่าย. ฟีเจอร์ดังกล่าวสามารถเปิดได้ด้วยคำสั่งเพิ่มเติม `-e` ขณะสร้างเครือข่าย
+- เพิ่มเติม [logs monitoring](https://besu.hyperledger.org/en/latest/HowTo/Monitor/Elastic-Stack/) ให้ข้อมูล real time logs ของ nodes ในเครือข่าย. ฟีเจอร์ดังกล่าวสามารถเปิดได้ด้วยคำสั่งเพิ่มเติม `-e` ขณะสร้างเครือข่าย
 
 ตัวอย่างต่อไปนี้ประกอบไปด้วย architecture diagrams ที่แสดงถึงส่วนประกอบต่างๆ. They generally use the POA (IBFT2 algorithm) setup, and to view the architecture diagrams for the POW (ethash) setup please see the `images` folder (where the POA variants have different suffixes). 
 
@@ -46,9 +47,9 @@ Each section also includes use case personas (intended as guidelines only).
 
 `./run.sh` เริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POW
 
-`./run.sh -c ibft2` ริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POA ซึ่งใช้ IBFT2 Consensus algorithm
+`./run.sh -c ibft2` เริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POA ซึ่งใช้ IBFT2 Consensus algorithm
 
-`./run.sh -c clique` ริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POA ซึ่งใช้ Clique Consensus algorithm
+`./run.sh -c clique` เริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POA ซึ่งใช้ Clique Consensus algorithm
 
 `-e` parameter เพิ่มเติมสำหรับการเปิดการใช้งานการ บันทึก logging ด้วย ELK 
 
@@ -62,7 +63,7 @@ Each section also includes use case personas (intended as guidelines only).
 
 ### i. POW (ethash) Network  <a name="pow-network"></a>
 
-This is the closest thing to how 'BitCoin' works, where miners create blocks. In the Ethereum space, the 'mainnet' and 'ropsten' public networks are POW based
+ตัวอย่างนี้เป็นตัวอย่างที่ใกล้เคียงกับการทำงานของ 'Bitcoin' มากที่, โดย miner หรือผู้ขุดเป็นคนสร้าง block. โดยใน Ethereum ใช้งานอยู่ในเครือข่าย 'mainnet' และ 'ropsten (เครือข่ายทดสอบ)' เครือข่ายดังกล่าวเป็นเครือข่ายแบบสาธารณะโดยทำงานแบบ POW
  
 ![Image basic_pow](./images/sampleNetworks-pow.png)
 
@@ -70,11 +71,11 @@ This is the closest thing to how 'BitCoin' works, where miners create blocks. In
 
 `./run.sh ` 
 
-Use cases: 
- - you are learning about how Ethereum works 
- - you are looking to create a Mainnet or Ropsten node but want to see how it works on a smaller scale
- - you are a DApp Developer looking for a robust, simple network to use as an experimental testing ground for POCs. 
- Generally speaking DApp developers prefer the immediate finality that a POA IBFT2 algorithm offer but POW networks work wells too
+เหมาะสำหรับ: 
+ - ถ้าคุณต้องการศึกษาการทำงานของ Ethereum
+ - ถ้าคุณกำลังศึกษาการสร้างเครือข่ายแบบเครือข่าย Mainnet หรือ Ropsten แต่ในรูปแบบเครือข่ายที่มีขนาดเล็กกว่า
+ - ถ้าคุณเป็นนักพัฒนา DApp ต้องการพัฒนาแอพพลิเคชั่นและทดสอบ DApp, ต้องการเครือข่ายแบบง่ายๆสำหรับใช้ในการทอดลอง หรือ ในการ Proof of Concept (POCs)
+ โดยทั่วไปแล้ว นักพัฒนา DApp ส่วนใหญ่มีความต้องการตอบสนองที่รวดเร็วและพึ่งพอใจมากกว่าที่จะใช้ POA IBFT2 algorithm อย่างไรก็ตามเครือข่ายแบบ POW ก็สามารถใช้งานได้ดีในกรณีที่ต้องจำให้ใกล้เคียงกับสภาพแวดล้อมจริงของ Ethereum เครือข่าย Mainnet
  
 ### ii. POA (ethash) Network  <a name="poa-network"></a>
  
@@ -84,10 +85,10 @@ Use cases:
 
 `./run.sh -c ibft2` 
 
-Use cases: 
- - you are learning about how Ethereum works 
- - you are looking to create a private eth network
- - you are a DApp Developer looking for a robust, simple network to use as an experimental testing ground for POCs. With the IBFT2 protocol you get immediate finality which makes life easier
+เหมาะสำหรับ:
+ - ถ้าคุณต้องการศึกษาการทำงานของ Ethereum 
+ - ถ้าคุณกำลังศึกษาการสร้างเครือข่ายแบบเครือข่าย Ethereum แบบส่วนตัว
+ - ถ้าคุณเป็นนักพัฒนา DApp ต้องการพัฒนาแอพพลิเคชั่นและทดสอบ DApp, ต้องการเครือข่ายแบบง่ายๆสำหรับใช้ในการทอดลอง หรือ ในการ Proof of Concept (POCs) โดยใช้ IBFT2 protocol ซึ่งมีการตอบสนองที่รวดเร็วทำให้ใช้งานได้ง่ายขึ้น
 
 
 ### iii. Smart Contracts & DApp (with MetaMask) <a name="smart-contract-dapp"></a>
@@ -113,7 +114,7 @@ This is the same as example ii. [POA (IBFT2) Network](#poa-network) but adds in 
 
 `./run.sh -c ibft2 -e` 
 
-Use cases: 
+เหมาะสำหรับ: 
  - you are learning about how Ethereum works 
  - you are looking to create a private Ethereum network
  - you are a DevOps engineer or administrator looking to see how the full blockchain works with logging and metrics
@@ -128,13 +129,13 @@ Use cases:
 
 `./run-privacy.sh` starts all the docker containers in POW mode, and also has 3 Orion nodes for privacy 
 
-Use cases: 
+เหมาะสำหรับ: 
  - you are learning about how Ethereum works 
  - you are a user looking to execute private transactions at least one other party
  - you are looking to create a private Ethereum network with private transactions between two or more parties. The logs make it easy to see whats going on between nodes and transactions
 
 
-This is a [video tutorial](https://www.youtube.com/watch?v=Menekt6-TEQ) of what the privacy example does
+[วิดีโอ ตัวอย่างสอน](https://www.youtube.com/watch?v=Menekt6-TEQ) ตัวอย่างโหมด privacy นั้นทำอะไรบ้าง
 
 Where the node details are as follows:
 
