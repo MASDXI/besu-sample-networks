@@ -32,29 +32,31 @@
 ## ตัวอย่างการตั้งค่าเพื่อสร้างเครือข่าย
 All our documentation can be found on the [Besu documentation site](https://besu.hyperledger.org/Tutorials/Examples/Private-Network-Example/).
 
-There are multiple examples in this repo, and each has a Proof of Work(POW) and Proof of Authority(POA) setup. Each setup 
-comprises a minimum of 4 Ethereum nodes with monitoring tools like:
-- [Alethio Lite Explorer](https://besu.hyperledger.org/en/latest/HowTo/Deploy/Lite-Block-Explorer/) to explore blockchain data at the block, transaction, and account level
-- [Metrics monitoring](https://besu.hyperledger.org/en/stable/HowTo/Monitor/Metrics/) via prometheus and grafana to give you insights into how the chain is progressing
-- Optional [logs monitoring](https://besu.hyperledger.org/en/latest/HowTo/Monitor/Elastic-Stack/) to give you real time logs of the nodes. This feature is enabled with a `-e` flag when starting the sample network
+มีเครือข่ายตัวอย่างมากมายใน `repo` นี้, ยกตัวอย่างเช่นเครือข่ายที่ใช้ Proof of Work(POW) และ Proof of Authority(POA). แต่ละตัวอย่าง 
+จำเป็นต้องมี Ethereun nodes จำนวน 4 node และ เครื่องมือสำหรับการติดตามสถานะของระบบเครือข่ายเช่น:
+- [Alethio Lite Explorer](https://besu.hyperledger.org/en/latest/HowTo/Deploy/Lite-Block-Explorer/) สำหรับ การค้นหข้อมูลต่างๆที่อยู่ในเครือข่าย และ การค้นหาบัญชี
+- [Metrics monitoring](https://besu.hyperledger.org/en/stable/HowTo/Monitor/Metrics/) ด้วย prometheus และ grafana ให้ insights into how the chain is progressing
+- เพิ่มเติม [logs monitoring](https://besu.hyperledger.org/en/latest/HowTo/Monitor/Elastic-Stack/) ให้ real time logs ของ nodes ในเครือข่าย. ฟีเจอร์ดังกล่าวสามารถเปิดได้ด้วยคำสั่งเพิ่มเติม `-e` ขณะสร้างเครือข่าย
 
-The examples also include architecture diagrams to visually show components. They generally use the POA (IBFT2 algorithm) setup, and to view the architecture diagrams for the POW (ethash) setup please see the `images` folder (where the POA variants have different suffixes). 
+ตัวอย่างต่อไปนี้ประกอบไปด้วย architecture diagrams ที่แสดงถึงส่วนประกอบต่างๆ. They generally use the POA (IBFT2 algorithm) setup, and to view the architecture diagrams for the POW (ethash) setup please see the `images` folder (where the POA variants have different suffixes). 
 
 Each section also includes use case personas (intended as guidelines only).
  
-**To start services and the network:**
+**ทำหรับการเรื่ม services และสร้างเครือข่าย:**
 
-`./run.sh` starts all the docker containers in POW mode
+`./run.sh` เริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POW
 
-`./run.sh -c ibft2` starts all the docker containers in POA mode using the IBFT2 Consensus algorithm
+`./run.sh -c ibft2` ริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POA ซึ่งใช้ IBFT2 Consensus algorithm
 
-There is an optional `-e` parameter which provides centralised logging functionality via ELK 
+`./run.sh -c clique` ริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POA ซึ่งใช้ Clique Consensus algorithm
 
-**To stop services :**
+`-e` parameter เพิ่มเติมสำหรับการเปิดการใช้งานการ บันทึก logging ด้วย ELK 
 
-`./stop.sh` stops the entire network, and you can resume where it left off with `./resume.sh` 
+**สำหรับการหยุด services การทำงาน:**
 
-`./remove.sh ` will first stop and then remove all containers and images
+`./stop.sh` เพื่อหยุดการทำงานของเครือข่ายทั้งหมด, และคุณสามารถที่จะเริ่มการทำงานของเครือข่ายได้ใหม่ด้วย `./resume.sh` 
+
+`./remove.sh ` จะทำการหยุดการทำงานของเครือข่ายทั้งหมดและ ทำการลบ containers และ images ของ node ต่างๆ
 
 
 
@@ -179,12 +181,12 @@ Use this scenario:
 
 This is a [video tutorial](https://www.youtube.com/watch?v=MhOJKOoEZQQ) of what the permissioning example does
  
-You need to have the following tools installed
+คุณจำเป็นต้องติดตั้งครื่องมือเหล่านี้ก่อน
  - [Nodejs](https://nodejs.org/en/download/)
  - [Yarn](https://www.npmjs.com/package/yarn)
  - [JQ](https://stedolan.github.io/jq/)
- - Install [metamask](https://metamask.io/) as an extension in your browser
- - Once you have setup your own private account, select 'My Accounts' by clicking on the avatar pic and then 'Import Account' for the following private keys:
+ - ติดตั้ง [metamask](https://metamask.io/) เป็นส่วนเสริมสำหรับเบราว์เซอร์
+ - ถ้าคุณมีการสร้างบัญชีมากก่อนหน้านี้แล้ว, เลือก 'My Accounts' โดยการคลิกรูป Avatar จากนั้น 'Import Account' และทำการนำเข้า private keys ดังนี้:
     - `0x8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63`
     - `0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3`
     - `0xae6ae8e5ccbfb04590405997ee2d52d2b330726137b875053c36d94e974d162f`
