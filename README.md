@@ -93,7 +93,7 @@ Each section also includes use case personas (intended as guidelines only).
 
 ### iii. Smart Contracts & DApp (with MetaMask) <a name="smart-contract-dapp"></a>
 
-- Install [metamask](https://metamask.io/) as an extension in your browser
+- ติดตั้ง [metamask](https://metamask.io/) as an extension in your browser
 - Once you have setup your own private account, select 'My Accounts' by clicking on the avatar pic and then 'Import Account' and enter the following private_key: `0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3`
 - Run `./run-dapp.sh` and when that completes open a new tab in your browser and go to `http://localhost:3001` which opens the Truffle pet-shop box app and you can adopt a pet from there.
 NOTE: Once you have adopted a pet, you can also go to the block explorer and search for the transaction where you can see its details recorded. Metamask will also have a record of any transactions.
@@ -106,7 +106,7 @@ Behind the scenes, this has used a smart contract that is compiled and then depl
 
 ### iv. [POA (IBFT2) Network with ELK for centralised logs] <a name="poa-network-logs"></a>
 
-This is the same as example ii. [POA (IBFT2) Network](#poa-network) but adds in centralized logging via ELK 
+ตัวอย่างนี้เหมือนตัวอย่างที่ ii. [POA (IBFT2) Network](#poa-network) แต่เพิ่มเติมในส่วนของ centralized logging ด้วย ELK 
 
 ![Image basic_elk](./images/sampleNetworks-poa-elk.png)
 
@@ -115,8 +115,8 @@ This is the same as example ii. [POA (IBFT2) Network](#poa-network) but adds in 
 `./run.sh -c ibft2 -e` 
 
 เหมาะสำหรับ: 
- - you are learning about how Ethereum works 
- - you are looking to create a private Ethereum network
+ - ถ้าคุณต้องการศึกษาการทำงานของ Ethereum
+ - ถ้าคุณกำลังศึกษาการสร้างเครือข่ายแบบเครือข่าย Ethereum แบบส่วนตัว
  - you are a DevOps engineer or administrator looking to see how the full blockchain works with logging and metrics
  - you are a DApp developer and looking to build on the previous example with the ability to see transaction logs via ELK 
 
@@ -130,14 +130,14 @@ This is the same as example ii. [POA (IBFT2) Network](#poa-network) but adds in 
 `./run-privacy.sh` starts all the docker containers in POW mode, and also has 3 Orion nodes for privacy 
 
 เหมาะสำหรับ: 
- - you are learning about how Ethereum works 
+ - ถ้าคุณต้องการศึกษาการทำงานของ Ethereum 
  - you are a user looking to execute private transactions at least one other party
  - you are looking to create a private Ethereum network with private transactions between two or more parties. The logs make it easy to see whats going on between nodes and transactions
 
 
 [วิดีโอ ตัวอย่างสอน](https://www.youtube.com/watch?v=Menekt6-TEQ) ตัวอย่างโหมด privacy นั้นทำอะไรบ้าง
 
-Where the node details are as follows:
+รายละเอียดของ node ดังนี้:
 
 Name  | Besu Node address                      | Orion node key | Node URL
 ----- | ---- | ---- | ---- |
@@ -148,7 +148,7 @@ node3 | 0x998c8bc11c28b667e4b1930c3fe3c9ab1cde3c52 | T1ItOQxwgY1pTW6YXb2EbKXYkK4
 
 **Testing Privacy between Orion nodes**
 
-Install [Nodejs](https://nodejs.org/en/download/) and then follow the [eeajs-multinode-example](https://besu.hyperledger.org/en/stable/Tutorials/Privacy/eeajs-Multinode-example/) which deploys 
+ติดตั้ง [Nodejs](https://nodejs.org/en/download/) and then follow the [eeajs-multinode-example](https://besu.hyperledger.org/en/stable/Tutorials/Privacy/eeajs-Multinode-example/) which deploys 
 an `EventEmitter` contract and then sends a couple of Private Transaction from Node1 -> Node2 (& vice versa) with an arbitrary value (1000). 
 
 At the end of both transactions, it then reads all three Orion nodes to check the value at an address, and you should observe 
