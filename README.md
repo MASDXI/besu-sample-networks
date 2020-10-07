@@ -51,7 +51,7 @@ Each section also includes use case personas (intended as guidelines only).
 
 `./run.sh -c clique` เริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POA ซึ่งใช้ Clique Consensus algorithm
 
-`-e` parameter เพิ่มเติมสำหรับการเปิดการใช้งานการ บันทึก logging ด้วย ELK 
+`-e` parameter เพิ่มเติมสำหรับการเปิดการใช้งานการ บันทึก centralized logging ด้วย ELK 
 
 **สำหรับการหยุด services การทำงาน:**
 
