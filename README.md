@@ -148,7 +148,7 @@ node3 | 0x998c8bc11c28b667e4b1930c3fe3c9ab1cde3c52 | T1ItOQxwgY1pTW6YXb2EbKXYkK4
 
 **Testing Privacy between Orion nodes**
 
-ติดตั้ง [Nodejs](https://nodejs.org/en/download/) and then follow the [eeajs-multinode-example](https://besu.hyperledger.org/en/stable/Tutorials/Privacy/eeajs-Multinode-example/) which deploys 
+ติดตั้ง [Nodejs](https://nodejs.org/en/download/) and then follow the [eeajs-multinode-example](https://besu.hyperledger.org/en/stable/Tutorials/Privacy/web3js-eea-Multinode-example/) which deploys 
 an `EventEmitter` contract and then sends a couple of Private Transaction from Node1 -> Node2 (& vice versa) with an arbitrary value (1000). 
 
 At the end of both transactions, it then reads all three Orion nodes to check the value at an address, and you should observe 
