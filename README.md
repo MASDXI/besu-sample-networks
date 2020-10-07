@@ -1,8 +1,8 @@
-# Besu Sample Networks
+# ตัวอย่างการสร้างเครือข่าย Hyperledger Besu 
 
-## Table of Contents
+## สารบัญ
 1. [Prerequisites](#prerequisites)
-2. [Example Network Setups](#example-network-setups)
+2. [ตัวอย่างการตั้งค่าเพื่อสร้างเครือข่าย](#ตัวอย่างการตั้งค่าเพื่อสร้างเครือข่าย)
     1. [POW (ethash) Network](#pow-network)
     2. [POA (IBFT2) Network](#poa-network)
     3. [Smart Contracts & DApp](#smart-contract-dapp)
@@ -13,23 +13,23 @@
 
 ## Prerequisites
 
-To run these tutorials, you must have the following installed:
+ในการเรียกใช้ตัวอย่างเครือข่าย คุณจำเป็นต้องติดตั้งสิ่งต่อไปนี้:
 
 - [Docker and Docker-compose](https://docs.docker.com/compose/install/)
 
-| ⚠️ **Note**: If on MacOS or Windows, please ensure that you allow docker to use upto 4G of memory or 6G if running Privacy examples under the _Resources_ section. The [Docker for Mac](https://docs.docker.com/docker-for-mac/) and [Docker Desktop](https://docs.docker.com/docker-for-windows/) sites have details on how to do this at the "Resources" heading       |
+| ⚠️ **Note**: ถ้าบน MacOS หรือ Windows, โปรดมั่นใจว่าคุณนั้นได้อนุญาติให้ docker สามารถเรียกใช้แรมได้ถึง 4G หรือ 6G ถ้าใช้งานในโหมด Privacy ตัวอย่าง under the _Resources_ section. The [Docker สำหรับ Mac](https://docs.docker.com/docker-for-mac/) และ [Docker สำหรับ Window](https://docs.docker.com/docker-for-windows/) ไซด์ดังกล่าวมีรายละเอียดเกี่ยวกับวิธีปรับตั้งค่าโดยอยู่ในหมวด  "Resources"     |
 | ---                                                                                                                                                                                                                                                                                                                                                                                |
 
 
-| ⚠️ **Note**: This has only been tested on Windows 10 Build 18362 and Docker >= 17.12.2                                                                                                                                                                                                                                                                                              |
+| ⚠️ **Note**: ถูกทดสอบบนแค่ใน Windows 10 Build 18362 และ Docker >= 17.12.2                                                                                                                                                                                                                                                                                              |
 | ---                                                                                                                                                                                                                                                                                                                                                                                |
 
-- On Windows ensure that the drive that this repo is cloned onto is a "Shared Drive" with Docker Desktop
-- On Windows we recommend running all commands from GitBash
-- [Nodejs](https://nodejs.org/en/download/) and [Truffle](https://www.trufflesuite.com/truffle) if using the DApp
+- บน Windows ensure that the drive that this repo is โคลน onto is a "Shared Drive" กับ Docker Desktop
+- บน Windows แนะนำให้เรียกใช้ทุกคำสั่งจาก GitBash
+- [Nodejs](https://nodejs.org/en/download/) และ [Truffle](https://www.trufflesuite.com/truffle) ถ้าใช้งาน DApp
 
 
-## Example Network Setups
+## ตัวอย่างการตั้งค่าเพื่อสร้างเครือข่าย
 All our documentation can be found on the [Besu documentation site](https://besu.hyperledger.org/Tutorials/Examples/Private-Network-Example/).
 
 There are multiple examples in this repo, and each has a Proof of Work(POW) and Proof of Authority(POA) setup. Each setup 
@@ -64,7 +64,7 @@ This is the closest thing to how 'BitCoin' works, where miners create blocks. In
  
 ![Image basic_pow](./images/sampleNetworks-pow.png)
 
-Start the network with: 
+เริ่มสร้างเครือข่ายด้วยคำสั่ง: 
 
 `./run.sh ` 
 
@@ -78,7 +78,7 @@ Use cases:
  
 ![Image basic_poa](./images/sampleNetworks-poa.png)
 
-Start the network with: 
+เริ่มสร้างเครือข่ายด้วยคำสั่ง: 
 
 `./run.sh -c ibft2` 
 
@@ -107,7 +107,7 @@ This is the same as example ii. [POA (IBFT2) Network](#poa-network) but adds in 
 
 ![Image basic_elk](./images/sampleNetworks-poa-elk.png)
 
-Start the network with: 
+เริ่มสร้างเครือข่ายด้วยคำสั่ง: 
 
 `./run.sh -c ibft2 -e` 
 
@@ -121,7 +121,7 @@ Use cases:
 
 ![Image basic_orion_elk](./images/sampleNetworks-poa-orion-elk.png)
 
-Start the network with: 
+เริ่มสร้างเครือข่ายด้วยคำสั่ง: 
 `./run-privacy.sh -c ibft2 -e` starts all the docker containers in POA mode using the IBFT2 Consensus algorithm, and also has 3 Orion nodes for privacy 
 
 `./run-privacy.sh` starts all the docker containers in POW mode, and also has 3 Orion nodes for privacy 
@@ -164,7 +164,7 @@ This example showcases on chain permissioning by deploying come [smart contracts
 ![Image basic_permissioning](./images/sampleNetworks-poa-permissioning.png)
 
 
-Start the network with: 
+เริ่มสร้างเครือข่ายด้วยคำสั่ง: 
 
 `./run-permissioning.sh -e` gets the latest smart contract code, compiles the contracts and updates the genesis file with the contract code. Once done it spins up a full network 
 
@@ -198,7 +198,7 @@ Open a new tab in your browser and go to `http://localhost:3001` to use the Perm
 ![Image ethsigner](./images/sampleNetworks-poa-signer.png)
 
 
-Start the network with: 
+เริ่มสร้างเครือข่ายด้วยคำสั่ง: 
 
 `./run.sh -c ibft2 -s` gets the latest smart contract code, compiles the contracts and updates the genesis file with the contract code. Once done it spins up a full network 
 
