@@ -1,5 +1,6 @@
 # ตัวอย่างการสร้างเครือข่าย Hyperledger Besu 
 
+
 ## สารบัญ
 1. [ข้อกำหนดเบื้องต้น](#ข้อกำหนดเบื้องต้น)
 2. [ตัวอย่างการตั้งค่าเพื่อสร้างเครือข่าย](#ตัวอย่างการตั้งค่าเพื่อสร้างเครือข่าย)
@@ -10,6 +11,7 @@
     5. [POA (IBFT2) Network with Privacy via Orion](#poa-network-privacy)
     6. [POA (IBFT2) Network with On Chain Permissioning](#poa-network-permissioning)
     7. [POA (IBFT2) Network with Ethsigner](#poa-network-ethsigner)
+*หมายเหตุ*:ในเครือข่ายที่ตั้งค่าแบบ POA ถูกตั้งค่าให้สามารถทำ transcation ได้โดยไม่มีการเก็บค่า gas เพื่อจุดประสงค์ในความสะดวกต่อการพัฒนา DApp
 
 ## ข้อกำหนดเบื้องต้น
 
@@ -18,7 +20,7 @@
 
 - [Docker และ Docker-compose](https://docs.docker.com/compose/install/)
 
-| ⚠️ **หมายเหตุ**: ถ้าบน MacOS หรือ Windows, โปรดมั่นใจว่าคุณนั้นได้อนุญาติให้ docker สามารถเรียกใช้แรมได้ถึง 4G หรือ 6G ถ้าใช้งานในโหมด Privacy ตัวอย่าง under the _Resources_ section. The [Docker สำหรับ Mac](https://docs.docker.com/docker-for-mac/) และ [Docker สำหรับ Window](https://docs.docker.com/docker-for-windows/) ไซด์ดังกล่าวมีรายละเอียดเกี่ยวกับวิธีปรับตั้งค่าโดยอยู่ในหมวด  "Resources"     |
+| ⚠️ **หมายเหตุ**: ถ้าบน MacOS หรือ Windows, โปรดมั่นใจว่าคุณนั้นได้อนุญาติให้ docker สามารถเรียกใช้แรมได้ถึง 4G หรือ 6G ถ้าใช้งานในโหมด Privacy ตัวอย่างภายใต้ส่วน _Resources_ [Docker สำหรับ Mac](https://docs.docker.com/docker-for-mac/) และ [Docker สำหรับ Window](https://docs.docker.com/docker-for-windows/) ไซด์ดังกล่าวมีรายละเอียดเกี่ยวกับวิธีปรับตั้งค่าโดยอยู่ในหมวด  "Resources"     |
 | ---                                                                                                                                                                                                                                                                                                                                                                                |
 
 
@@ -150,12 +152,16 @@ node3 | 0x998c8bc11c28b667e4b1930c3fe3c9ab1cde3c52 | T1ItOQxwgY1pTW6YXb2EbKXYkK4
 
 **Testing Privacy between Orion nodes**
 
-ติดตั้ง [Nodejs](https://nodejs.org/en/download/) and then follow the [eeajs-multinode-example](https://besu.hyperledger.org/en/stable/Tutorials/Privacy/web3js-eea-Multinode-example/) which deploys 
-an `EventEmitter` contract and then sends a couple of Private Transaction from Node1 -> Node2 (& vice versa) with an arbitrary value (1000). 
+ติดตั้ง [Nodejs](https://nodejs.org/en/download/) และทำตามตัวอย่าง [eeajs-multinode-example](https://besu.hyperledger.org/en/stable/Tutorials/Privacy/web3js-eea-Multinode-example/) 
+
+ซึ่ง deploy smart contract `EventEmitter` จากนั้นส่ง Private Transaction สองอันจาก Node1 -> Node2 (& ในทางกลับกัน) โดยค่าที่ส่งไปคือ (1000)
 
 At the end of both transactions, it then reads all three Orion nodes to check the value at an address, and you should observe 
 that only Node1 & Node2 have this information becuase they were involved in the transaction and that Orion3 responds with a `0x` 
 value for reads at those addresses
+
+ในตอนท้ายของ transactions ทั้งสอง Orion node ทั้งสามเพื่อตรวจสอบค่าตามที่อยู่และคุณควรสังเกต
+มีเพียง Node1 & Node2 เท่านั้นที่มีข้อมูลนี้เนื่องจากมีส่วนเกี่ยวข้องกับ transactions นั้นและ Orion3 ให้เนื้อหาข้อมูลเป็น "0x"
 
 There is an additional erc20 token example that you can also test with: executing `node example/erc20.js` deploys a `HumanStandardToken` contract and transfers 1 token to node2.
 
