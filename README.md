@@ -25,7 +25,7 @@
 | ⚠️ **Note**: ถูกทดสอบบนแค่ใน Windows 10 Build 18362 และ Docker >= 17.12.2                                                                                                                                                                                                                                                                                              |
 | ---                                                                                                                                                                                                                                                                                                                                                                                |
 
-- บน Windows ensure that the drive that this repo is โคลน onto is a "Shared Drive" กับ Docker Desktop
+- บน Windows ตรวจสอบให้แน่ใจว่าไดรฟ์ที่มี repo โคลนนี้อยู่เป็นแบบ "Shared Drive" กับ Docker Desktop
 - บน Windows แนะนำให้เรียกใช้ทุกคำสั่งจาก GitBash
 - [Nodejs](https://nodejs.org/en/download/) และ [Truffle](https://www.trufflesuite.com/truffle) ถ้าใช้งาน DApp
 
@@ -39,9 +39,9 @@ All our documentation can be found on the [Besu documentation site](https://besu
 - [Metrics monitoring](https://besu.hyperledger.org/en/stable/HowTo/Monitor/Metrics/) ด้วย prometheus และ grafana ให้ insights into how the chain is progressing
 - เพิ่มเติม [logs monitoring](https://besu.hyperledger.org/en/latest/HowTo/Monitor/Elastic-Stack/) ให้ข้อมูล real time logs ของ nodes ในเครือข่าย. ฟีเจอร์ดังกล่าวสามารถเปิดได้ด้วยคำสั่งเพิ่มเติม `-e` ขณะสร้างเครือข่าย
 
-ตัวอย่างต่อไปนี้ประกอบไปด้วย architecture diagrams ที่แสดงถึงส่วนประกอบต่างๆ. They generally use the POA (IBFT2 algorithm) setup, and to view the architecture diagrams for the POW (ethash) setup please see the `images` folder (where the POA variants have different suffixes). 
+ตัวอย่างต่อไปนี้ประกอบไปด้วย architecture diagrams ที่แสดงถึงส่วนประกอบต่างๆ. โดยทั่วไปจะเป็นสร้างเครือข่ายโดยใช้การตั้งค่าแบบ POA (IBFT2 algorithm), และถ้าต้องการดู architecture diagrams สำหรับเครือข่ายที่ตั้งค่าแบบ POW (ethash) สามารถเข้าไปดูได้ในโฟลเดอร์ `images` (where the POA variants have different suffixes). 
 
-Each section also includes use case personas (intended as guidelines only).
+แต่ละส่วนยังรวมถึงลักษณะกรณีการใช้งาน (มีไว้เพื่อเป็นแนวทางเท่านั้น)
  
 **ทำหรับการเรื่ม services และสร้างเครือข่าย:**
 
@@ -95,7 +95,7 @@ Each section also includes use case personas (intended as guidelines only).
 
 - ติดตั้ง [metamask](https://metamask.io/) เป็นส่วนเสริมสำหรับเบราว์เซอร์
 - ถ้าคุณมีการสร้างบัญชีมากก่อนหน้านี้แล้ว, เลือก 'My Accounts' โดยการคลิกรูป Avatar จากนั้น 'Import Account' และทำการนำเข้า private keys ดังนี้: `0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3`
-- Run `./run-dapp.sh` and when that completes open a new tab in your browser and go to `http://localhost:3001` which opens the Truffle pet-shop box app and you can adopt a pet from there.
+- รัน `./run-dapp.sh` และเมื่อเสร็จสิ้น เปิดแท็บใหม่ใหม่บราว์เซอร์และไปที่ `http://localhost:3001` which opens the Truffle pet-shop box app and you can adopt a pet from there.
 NOTE: Once you have adopted a pet, you can also go to the block explorer and search for the transaction where you can see its details recorded. Metamask will also have a record of any transactions.
 
 [วิดีโอ ตัวอย่างสอน](https://www.youtube.com/watch?v=_3E9FRJldj8) ตัวอย่าง DApp หรือ แอพพลิเคชั่นแบบกระจายศูนย์กลาง
@@ -117,21 +117,21 @@ Behind the scenes, this has used a smart contract that is compiled and then depl
 เหมาะสำหรับ: 
  - ถ้าคุณต้องการศึกษาการทำงานของ Ethereum
  - ถ้าคุณกำลังศึกษาการสร้างเครือข่ายแบบเครือข่าย Ethereum แบบส่วนตัว
- - you are a DevOps engineer or administrator looking to see how the full blockchain works with logging and metrics
- - you are a DApp developer and looking to build on the previous example with the ability to see transaction logs via ELK 
+ - ถ้าคุณเป็น DevOps engineer หรือ administrator กำลังมองหาเครือข่าย blockchain มี feature การเก็บ logging และ metrics
+ - ถ้าคุณเป็นนักพัฒนา DApp developer และต้องการต่อยอดจากตัวอย่างก่อนหน้านี้ด้วยความสามารถในการดู transaction ด้วย ELK
 
 ### v. POA (IBFT2) Network with Privacy via Orion <a name="poa-network-privacy"></a>
 
 ![Image basic_orion_elk](./images/sampleNetworks-poa-orion-elk.png)
 
 เริ่มสร้างเครือข่ายด้วยคำสั่ง: 
-`./run-privacy.sh -c ibft2 -e` starts all the docker containers in POA mode using the IBFT2 Consensus algorithm, and also has 3 Orion nodes for privacy 
+`./run-privacy.sh -c ibft2 -e` เริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POA IBFT2 Consensus algorithm, และมี 3 Orion nodes สำหรับการทำงานที่ต้องการ privacy 
 
-`./run-privacy.sh` starts all the docker containers in POW mode, and also has 3 Orion nodes for privacy 
+`./run-privacy.sh` เริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POW , และมี 3 Orion nodes สำหรับการทำงานที่ต้องการ privacy 
 
 เหมาะสำหรับ: 
  - ถ้าคุณต้องการศึกษาการทำงานของ Ethereum 
- - you are a user looking to execute private transactions at least one other party
+ - คุณเป็นผู้ใช้ที่ต้องการทำธุรกรรมส่วนตัว กับ party อื่นๆในเครือข่าย
  - you are looking to create a private Ethereum network with private transactions between two or more parties. The logs make it easy to see whats going on between nodes and transactions
 
 
@@ -203,7 +203,7 @@ Open a new tab in your browser and go to `http://localhost:3001` to use the Perm
 
 เริ่มสร้างเครือข่ายด้วยคำสั่ง: 
 
-`./run.sh -c ibft2 -s` gets the latest smart contract code, compiles the contracts and updates the genesis file with the contract code. Once done it spins up a full network 
+`./run.sh -c ibft2 -s` gets smart contract code ล่าสุด, compiles smart contracts และอัพเดท genesis file ด้วย smart contract code. เมื่อเสร็จก็จะถูกใช้ในระบบเครือข่าย
 
 ใช้สถานการณ์นี้ในกรณี:
  - if you need to sign transactions with a private key and forward that to the Ethereum client (for example Besu)
