@@ -163,15 +163,14 @@ This can be verified from the `data` field of the `logs` which is `1`.
 
 ### vi. POA (IBFT2) Network with On Chain Permissioning <a name="poa-network-permissioning"></a>
 
-
-This example showcases on chain permissioning by deploying come [smart contracts](https://github.com/PegaSysEng/permissioning-smart-contracts)
+ตัวอย่างนี้แสดงให้เห็นถึงการใช้งาน on chain permissioning [smart contracts](https://github.com/PegaSysEng/permissioning-smart-contracts)
 
 ![Image basic_permissioning](./images/sampleNetworks-poa-permissioning.png)
 
 
 เริ่มสร้างเครือข่ายด้วยคำสั่ง: 
 
-`./run-permissioning.sh -e` gets smart contract code ล่าสุด, compiles smart contracts และอัพเดท genesis file ด้วย smart contract code. เมื่อเสร็จก็จะถูกใช้ในระบบเครือข่าย
+`./run-permissioning.sh -e` รับ smart contract code ล่าสุด, compiles smart contracts และอัพเดท genesis file ด้วย smart contract code. เมื่อเสร็จก็จะถูกใช้ในระบบเครือข่าย
 
 `./run-permissioning-dapp.sh -e` เมื่อเครือข่ายจากขั้นตอนก่อนหน้านี้ระบบจะ migrate smart contract ไปยังเครือข่าย และเมื่อเสร็จสมบูรณ์แล้วจะรีสตาร์ทเครือข่าย blockchain โดยเปิดใช้งานสิทธิ์เพื่อให้กฎและสิทธิ์ที่ปรับใช้ในขั้นตอนก่อนหน้ามีผล
 
@@ -205,11 +204,11 @@ This example showcases on chain permissioning by deploying come [smart contracts
 
 เริ่มสร้างเครือข่ายด้วยคำสั่ง: 
 
-`./run.sh -c ibft2 -s` gets smart contract code ล่าสุด, compiles smart contracts และอัพเดท genesis file ด้วย smart contract code. เมื่อเสร็จก็จะถูกใช้ในระบบเครือข่าย
+`./run.sh -c ibft2 -s` รับ smart contract code ล่าสุด, compiles smart contracts และอัพเดท genesis file ด้วย smart contract code. เมื่อเสร็จก็จะถูกใช้ในระบบเครือข่าย
 
 ใช้สถานการณ์นี้ในกรณี:
  - หากคุณต้องการลงนามในการทำ transaction ด้วย private key และส่งต่อไปยังไคลเอนต์ Ethereum (ตัวอย่างเช่น Besu และ Quorum)
  
-เมื่อเสร็จแล้วคุณสามารถทำตาม [ตัวอย่าง] (https://docs.ethsigner.pegasys.tech/en/stable/HowTo/Transactions/Make-Transactions/) ซึ่งจะแสดงวิธีการ sign transactions ไปยังเครือข่าย
+เมื่อเสร็จแล้วคุณสามารถทำตาม [ตัวอย่าง](https://docs.ethsigner.pegasys.tech/en/stable/HowTo/Transactions/Make-Transactions/) ซึ่งจะแสดงวิธีการ sign transactions ไปยังเครือข่าย
 
 *หมายเหตุ*: please remember to use port 18545 for any examples in this tutorial
