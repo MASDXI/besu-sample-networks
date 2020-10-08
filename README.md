@@ -36,7 +36,7 @@ All our documentation can be found on the [Besu documentation site](https://besu
 มีเครือข่ายตัวอย่างมากมายใน `repo` นี้, ยกตัวอย่างเช่นเครือข่ายที่ใช้ Proof of Work(POW) และ Proof of Authority(POA) แต่ละตัวอย่าง 
 จำเป็นต้องมี Ethereun nodes จำนวน 4 node และ เครื่องมือสำหรับการติดตามสถานะของระบบเครือข่ายเช่น:
 - [Alethio Lite Explorer](https://besu.hyperledger.org/en/latest/HowTo/Deploy/Lite-Block-Explorer/) สำหรับ การค้นหข้อมูลต่างๆที่อยู่ในเครือข่าย และ การค้นหาบัญชี
-- [Metrics monitoring](https://besu.hyperledger.org/en/stable/HowTo/Monitor/Metrics/) ด้วย prometheus และ grafana ให้ insights into how the chain is progressing
+- [Metrics monitoring](https://besu.hyperledger.org/en/stable/HowTo/Monitor/Metrics/) ด้วย prometheus และ grafana ให้ข้อมูลเชิงลึกเกี่ยวกับการ กระบวนการทำงานของ blockchain
 - เพิ่มเติม [logs monitoring](https://besu.hyperledger.org/en/latest/HowTo/Monitor/Elastic-Stack/) ให้ข้อมูล real time logs ของ nodes ในเครือข่าย. ฟีเจอร์ดังกล่าวสามารถเปิดได้ด้วยคำสั่งเพิ่มเติม `-e` ขณะสร้างเครือข่าย
 
 ตัวอย่างต่อไปนี้ประกอบไปด้วย architecture diagrams ที่แสดงถึงส่วนประกอบต่างๆ. โดยทั่วไปจะเป็นสร้างเครือข่ายโดยใช้การตั้งค่าแบบ POA (IBFT2 algorithm), และถ้าต้องการดู architecture diagrams สำหรับเครือข่ายที่ตั้งค่าแบบ POW (ethash) สามารถเข้าไปดูได้ในโฟลเดอร์ `images` (ซึ่งมีการตั้งค่าแบบ POA ในรูปแบบต่างๆที่มีใช้ feature อื่นๆเพิ่มเติม)
