@@ -173,7 +173,7 @@ This example showcases on chain permissioning by deploying come [smart contracts
 
 `./run-permissioning.sh -e` gets smart contract code ล่าสุด, compiles smart contracts และอัพเดท genesis file ด้วย smart contract code. เมื่อเสร็จก็จะถูกใช้ในระบบเครือข่าย
 
-`./run-permissioning-dapp.sh -e` With the network up from the previous step, it will migrate the contracts to the network. Once complete, it restarts the blockchain network with permissions enabled so the rules and permissions deployed in the previous step take effect
+`./run-permissioning-dapp.sh -e` เมื่อเครือข่ายจากขั้นตอนก่อนหน้านี้ระบบจะ migrate smart contract ไปยังเครือข่าย และเมื่อเสร็จสมบูรณ์แล้วจะรีสตาร์ทเครือข่าย blockchain โดยเปิดใช้งานสิทธิ์เพื่อให้กฎและสิทธิ์ที่ปรับใช้ในขั้นตอนก่อนหน้ามีผล
 
 เปิดแท็บใหม่ใหม่บราว์เซอร์และไปที่ `http://localhost:3001` เพื่อทอดสอบใช้งาน Permissioning DApp 
 
@@ -208,7 +208,7 @@ This example showcases on chain permissioning by deploying come [smart contracts
 `./run.sh -c ibft2 -s` gets smart contract code ล่าสุด, compiles smart contracts และอัพเดท genesis file ด้วย smart contract code. เมื่อเสร็จก็จะถูกใช้ในระบบเครือข่าย
 
 ใช้สถานการณ์นี้ในกรณี:
- - หากคุณต้องการลงนามในการทำ transaction ด้วยคีย์ส่วนตัวและส่งต่อไปยังไคลเอนต์ Ethereum (ตัวอย่างเช่น Besu และ Quorum)
+ - หากคุณต้องการลงนามในการทำ transaction ด้วย private key และส่งต่อไปยังไคลเอนต์ Ethereum (ตัวอย่างเช่น Besu และ Quorum)
  
 เมื่อเสร็จแล้วคุณสามารถทำตาม [ตัวอย่าง] (https://docs.ethsigner.pegasys.tech/en/stable/HowTo/Transactions/Make-Transactions/) ซึ่งจะแสดงวิธีการ sign transactions ไปยังเครือข่าย
 
