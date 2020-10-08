@@ -149,8 +149,7 @@ node1 | 0x866b0df7138daf807300ed9204de733c1eb6d600 | 9QHwUJ6uK+FuQMzFSXIo7wOLCGF
 node2 | 0xa46f0935de4176ffeccdeecaf3c6e3ca03e31b22 | qVDsbJh2UluZOePxbXAL49g0S0s2gGlJ3ftQceMlchU= | http://localhost:20002
 node3 | 0x998c8bc11c28b667e4b1930c3fe3c9ab1cde3c52 | T1ItOQxwgY1pTW6YXb2EbKXYkK4saBEys3CfJ2OIKHs= | http://localhost:20004
 
-
-**Testing Privacy between Orion nodes**
+**การทดสอบ  Privacy ระหว่าง Orion node**
 
 ติดตั้ง [Nodejs](https://nodejs.org/en/download/) และทำตามตัวอย่าง [eeajs-multinode-example](https://besu.hyperledger.org/en/stable/Tutorials/Privacy/web3js-eea-Multinode-example/) 
 
