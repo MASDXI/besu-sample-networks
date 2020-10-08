@@ -100,7 +100,8 @@ NOTE: เมื่อคุณรับสัตว์เลี้ยงมา�
 
 [วิดีโอ ตัวอย่างสอน](https://www.youtube.com/watch?v=_3E9FRJldj8) ตัวอย่าง DApp หรือ แอพพลิเคชั่นแบบกระจายศูนย์กลาง
 
-Behind the scenes, this has used a smart contract that is compiled and then deployed (via a migration) to our test network. คุณสามารถค้นหาและตรวจสอบ source code ของ smart contract และ DApp ได้ซึ่งถูกเก็บไว้ในโฟลเดอร์ `pet-shop`
+เบื้องหลังนี้ใช้ smart contract ที่ complied และถูก deployed (ด้วยการ Migration) ไปยังเครือข่ายทดสอบ
+ซึ่งคุณสามารถค้นหาและตรวจสอบ source code ของ smart contract และ DApp ได้ซึ่งถูกเก็บไว้ในโฟลเดอร์ `pet-shop`
 
 ![Image dapp](./images/sampleNetworks-dapp.png)
 
@@ -132,7 +133,7 @@ Behind the scenes, this has used a smart contract that is compiled and then depl
 เหมาะสำหรับ: 
  - ถ้าคุณต้องการศึกษาการทำงานของ Ethereum 
  - คุณเป็นผู้ใช้ที่ต้องการทำธุรกรรมส่วนตัว กับ party อื่นๆในเครือข่าย
- - you are looking to create a private Ethereum network with private transactions between two or more parties. The logs make it easy to see whats going on between nodes and transactions
+ - คุณกำลังต้องการสร้างเครือข่าย Ethereum ส่วนตัวที่มีการใช้งาน feature private transactions ตัวระหว่างสอง party ขึ้นไป
 
 
 [วิดีโอ ตัวอย่างสอน](https://www.youtube.com/watch?v=Menekt6-TEQ) ตัวอย่างการใช้งาน feature privacy นั้นทำอะไรบ้าง
@@ -206,7 +207,7 @@ Open a new tab in your browser and go to `http://localhost:3001` to use the Perm
 `./run.sh -c ibft2 -s` gets smart contract code ล่าสุด, compiles smart contracts และอัพเดท genesis file ด้วย smart contract code. เมื่อเสร็จก็จะถูกใช้ในระบบเครือข่าย
 
 ใช้สถานการณ์นี้ในกรณี:
- - หากคุณต้องการลงนามในการทำ transaction ด้วยคีย์ส่วนตัวและส่งต่อไปยังไคลเอนต์ Ethereum (ตัวอย่างเช่น Besu)
+ - หากคุณต้องการลงนามในการทำ transaction ด้วยคีย์ส่วนตัวและส่งต่อไปยังไคลเอนต์ Ethereum (ตัวอย่างเช่น Besu และ Quorum)
  
-Once it is up you can follow this [tutorial](https://docs.ethsigner.pegasys.tech/en/stable/HowTo/Transactions/Make-Transactions/) which shows you how to sign transactions that get on the chain. 
+Once it is up you can follow this [ตัวอย่าง](https://docs.ethsigner.pegasys.tech/en/stable/HowTo/Transactions/Make-Transactions/) which shows you how to sign transactions that get on the chain. 
 *NOTE*: please remember to use port 18545 for any examples in this tutorial
