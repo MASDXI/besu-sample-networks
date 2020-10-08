@@ -213,4 +213,4 @@ node3 | 0x998c8bc11c28b667e4b1930c3fe3c9ab1cde3c52 | T1ItOQxwgY1pTW6YXb2EbKXYkK4
  
 เมื่อเสร็จแล้วคุณสามารถทำตาม [ตัวอย่าง](https://docs.ethsigner.pegasys.tech/en/stable/HowTo/Transactions/Make-Transactions/) ซึ่งจะแสดงวิธีการ sign transactions ไปยังเครือข่าย
 
-*หมายเหตุ*: please remember to use port 18545 for any examples in this tutorial
+*หมายเหตุ*:โปรดอย่าลืมใช้พอร์ต 18545 สำหรับตัวอย่างในบทช่วยสอนนี้
