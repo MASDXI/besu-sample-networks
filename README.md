@@ -95,12 +95,12 @@ All our documentation can be found on the [Besu documentation site](https://besu
 
 - ติดตั้ง [metamask](https://metamask.io/) เป็นส่วนเสริมสำหรับเบราว์เซอร์
 - ถ้าคุณมีการสร้างบัญชีมากก่อนหน้านี้แล้ว, เลือก 'My Accounts' โดยการคลิกรูป Avatar จากนั้น 'Import Account' และทำการนำเข้า private keys ดังนี้: `0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3`
-- รัน `./run-dapp.sh` และเมื่อเสร็จสิ้น เปิดแท็บใหม่ใหม่บราว์เซอร์และไปที่ `http://localhost:3001` which opens the Truffle pet-shop box app and you can adopt a pet from there.
-NOTE: Once you have adopted a pet, you can also go to the block explorer and search for the transaction where you can see its details recorded. Metamask will also have a record of any transactions.
+- รัน `./run-dapp.sh` และเมื่อเสร็จสิ้น เปิดแท็บใหม่ใหม่บราว์เซอร์และไปที่ `http://localhost:3001` ซึ่งจะเปิด Truffle pet-shop box app และคุณสามารถที่จะทดสอบลองอุปการะสัตว์เลี้ยงได้
+NOTE: เมื่อคุณรับสัตว์เลี้ยงมาแล้วคุณยังสามารถไปที่ block explorer และค้นหา trasnsaction ที่คุณทำซึ่งสามารถดูรายละเอียด transaction ที่บันทึกไว้ได้ใน Metamask
 
 [วิดีโอ ตัวอย่างสอน](https://www.youtube.com/watch?v=_3E9FRJldj8) ตัวอย่าง DApp หรือ แอพพลิเคชั่นแบบกระจายศูนย์กลาง
 
-Behind the scenes, this has used a smart contract that is compiled and then deployed (via a migration) to our test network. The source code for the smart contract and the DApp can be found in the folder `pet-shop`
+Behind the scenes, this has used a smart contract that is compiled and then deployed (via a migration) to our test network. คุณสามารถค้นหาและตรวจสอบ source code ของ smart contract และ DApp ได้ซึ่งถูกเก็บไว้ในโฟลเดอร์ `pet-shop`
 
 ![Image dapp](./images/sampleNetworks-dapp.png)
 
@@ -206,7 +206,7 @@ Open a new tab in your browser and go to `http://localhost:3001` to use the Perm
 `./run.sh -c ibft2 -s` gets smart contract code ล่าสุด, compiles smart contracts และอัพเดท genesis file ด้วย smart contract code. เมื่อเสร็จก็จะถูกใช้ในระบบเครือข่าย
 
 ใช้สถานการณ์นี้ในกรณี:
- - if you need to sign transactions with a private key and forward that to the Ethereum client (for example Besu)
+ - หากคุณต้องการลงนามในการทำ transaction ด้วยคีย์ส่วนตัวและส่งต่อไปยังไคลเอนต์ Ethereum (ตัวอย่างเช่น Besu)
  
 Once it is up you can follow this [tutorial](https://docs.ethsigner.pegasys.tech/en/stable/HowTo/Transactions/Make-Transactions/) which shows you how to sign transactions that get on the chain. 
 *NOTE*: please remember to use port 18545 for any examples in this tutorial
