@@ -176,9 +176,9 @@ This example showcases on chain permissioning by deploying come [smart contracts
 Open a new tab in your browser and go to `http://localhost:3001` to use the Permissioning DApp 
 
 
-Use this scenario:
- - if you are a DevOps engineer or administrator looking to see how the full blockchain works with on chain permissioning and restrictions
- - if you are looking to start a consortium network with permissioning so you can restrict members that join the network
+ใช้สถานการณ์นี้ในกรณี:
+ - ถ้าคุณเป็น DevOps engineer หรือ administrator กำลังมองหาเครือข่าย blockchain มี feature การทำ on chain permissioning และ restrictions
+ - ถ้าคุณเป็นคนที่กำลังมองหาเครือข่าย blockchain แบบ consortium network และมี permissioning ซึ่งสามารถจัดการการเข้าถึงของสมาชิกที่จะเข้ามาร่วมในเครือข่าย
 
 [วิดีโอ ตัวอย่างสอน](https://www.youtube.com/watch?v=MhOJKOoEZQQ) ตัวอย่างการใช้งาน feature permissioning นั้นทำอะไรบ้าง
  
@@ -192,7 +192,7 @@ Use this scenario:
     - `0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3`
     - `0xae6ae8e5ccbfb04590405997ee2d52d2b330726137b875053c36d94e974d162f`
 
-Open a new tab in your browser and go to `http://localhost:3001` to use the Permissioning DApp, where you can allow/disallow nodes from the network
+เปิดบราว์เซอร์แท็บใหม่และไปที่ `http://localhost:3001` เพื่อทดลองใช้งาน Permissioning DApp, ซึ่งสามารถ อนุญาติ/ไม่อนุญาติ node ในเครือข่ายได้
 
 
 
@@ -205,7 +205,7 @@ Open a new tab in your browser and go to `http://localhost:3001` to use the Perm
 
 `./run.sh -c ibft2 -s` gets the latest smart contract code, compiles the contracts and updates the genesis file with the contract code. Once done it spins up a full network 
 
-Use this scenario:
+ใช้สถานการณ์นี้ในกรณี:
  - if you need to sign transactions with a private key and forward that to the Ethereum client (for example Besu)
  
 Once it is up you can follow this [tutorial](https://docs.ethsigner.pegasys.tech/en/stable/HowTo/Transactions/Make-Transactions/) which shows you how to sign transactions that get on the chain. 
