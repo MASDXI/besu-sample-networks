@@ -45,7 +45,7 @@ All our documentation can be found on the [Besu documentation site](https://besu
 
 แต่ละส่วนยังรวมถึงลักษณะกรณีการใช้งาน (มีไว้เพื่อเป็นแนวทางเท่านั้น)
  
-**ทำหรับการเรื่ม services และสร้างเครือข่าย:**
+**สำหรับการเรื่ม services และสร้างเครือข่าย:**
 
 `./run.sh` เริ่ม docker containers ของ node ทั้งหมดและสร้างเครือข่ายในโหมดการทำงานแบบ POW
 
